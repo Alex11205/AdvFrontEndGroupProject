@@ -1,3 +1,29 @@
+Components
+1.Card.tsx: All the cards in the destination page and collection page call and use this card component
+2.footer.tsx: All the pages use this component as a footer
+3.header.tsx: All the pages use this component as a header, it includes a navigation bar and a title
+4.Hero.tsx: The home page calls this component to display a hero element
+5.TripPlanner.tsx: The trips page call this component
+
+Routes
+Every page has a navigation bar, which can route to different pages. In destination page, each card's picture and "discover" button can direct to the detailed destination page. Also, in each individual desitination page, a link is provided to navigate to the full destination list page.
+
+State management
+Each destination can be stored in a localstorage. The state of whether a card has been saved, as well as the contents of the stored cards are stored in different states. And the stored content can be displayed in another page.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <<<<<<< HEAD
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
 
