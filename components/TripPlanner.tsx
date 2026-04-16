@@ -1,59 +1,70 @@
-// "use client";
-
 import { useState } from "react";
-import styles from "../styles/TripPlanner.module.css";
+import styles from "@/styles/TripPlanner.module.css";
 
 export default function TripPlanner() {
-  const [trip, setTrip] = useState("");
-  const [tripList, setTripList] = useState([]);
+  const [destination, setDestination] = useState("");
+  const [destinations, setDestinations] = useState<string[]>([]);
 
-  const addTrip = () => {
-    if (!trip.trim()) return;
-    setTripList([...tripList, trip]);
-    setTrip("");
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const trimmed = destination.trim();
+    if (!trimmed) return;
+
+    setDestinations((prev) => [...prev, trimmed]);
+    setDestination("");
   };
 
-  const removeTrip = (indexToRemove) => {
-    setTripList(tripList.filter((_, index) => index !== indexToRemove));
+  const handleRemove = (indexToRemove: number) => {
+    setDestinations((prev) =>
+      prev.filter((_, index) => index !== indexToRemove)
+    );
   };
 
   return (
-    <div className={styles.planner}>
-      <div className={styles.top}>
-        <p className={styles.eyebrow}>Build your own journey</p>
-        <h2>Plan your next destination</h2>
-        <p className={styles.subtext}>
-          Add dream destinations and organize the places you want to visit next.
+    <div className={styles.tripPlannerBox}>
+      <div className={styles.tripPlannerHeader}>
+        <span className={styles.tripPlannerEyebrow}>Personal planner</span>
+        <h3>Build your next trip</h3>
+        <p>
+          Save destinations, keep your ideas in one place, and start shaping an
+          itinerary that fits your style.
         </p>
       </div>
 
-      <div className={styles.inputRow}>
+      <form className={styles.tripPlannerForm} onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="Enter a destination"
-          value={trip}
-          onChange={(e) => setTrip(e.target.value)}
+          value={destination}
+          onChange={(e) => setDestination(e.target.value)}
+          placeholder="Add a destination"
+          className={styles.tripPlannerInput}
         />
-        <button onClick={addTrip}>Add trip</button>
-      </div>
+        <button type="submit" className={styles.tripPlannerButton}>
+          Add
+        </button>
+      </form>
 
-      {tripList.length === 0 ? (
-        <div className={styles.emptyBox}>
-          <p>No trips added yet.</p>
-          <span>Try adding Japan, Italy, Morocco, or Canada.</span>
+      {destinations.length === 0 ? (
+        <div className={styles.tripPlannerEmpty}>
+          No destinations added yet. Start with places like Kyoto, Lisbon,
+          Marrakech, or Banff.
         </div>
       ) : (
-        <ul className={styles.tripList}>
-          {tripList.map((item, index) => (
-            <li key={index}>
-              <div>
-                <strong>{item}</strong>
-                <p>Saved to your trip ideas</p>
-              </div>
-              <button onClick={() => removeTrip(index)}>Remove</button>
-            </li>
+        <div className={styles.tripPlannerList}>
+          {destinations.map((place, index) => (
+            <div key={`${place}-${index}`} className={styles.tripPlannerItem}>
+              <span>{place}</span>
+              <button
+                type="button"
+                className={styles.tripPlannerRemove}
+                onClick={() => handleRemove(index)}
+              >
+                Remove
+              </button>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );

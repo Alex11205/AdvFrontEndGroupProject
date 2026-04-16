@@ -92,7 +92,7 @@ If localStorage is used:
 ---
 
 ## Technologies Used
-- Next.js
+- Next.jss
 - React
 - Tailwind CSS
 - JavaScript / TypeScript

@@ -191,10 +191,6 @@ export default function DestinationPage() {
             <h1 className="mb-4 text-4xl font-bold md:text-5xl">
               {destination.title}
             </h1>
-
-            <p className="max-w-xl text-base leading-7 text-gray-200 md:text-lg">
-              {destination.overview}
-            </p>
           </div>
 
           <div className="min-h-[320px] md:min-h-[520px]">
@@ -206,32 +202,25 @@ export default function DestinationPage() {
           </div>
         </section>
 
-        <section className="mt-8 grid gap-6 lg:grid-cols-2">
-          <div className="rounded-2xl bg-white p-6 shadow-md">
-            <h2 className="mb-3 text-2xl font-semibold">
+        <section className="mt-8">
+          <div className="rounded-2xl bg-white p-6 shadow-md md:p-8">
+            <h2 className="mb-4 text-2xl font-semibold md:text-3xl">
               Why visit {destination.title}
             </h2>
-            <p className="leading-7 text-gray-700">{destination.overview}</p>
-          </div>
-
-          <div className="rounded-2xl bg-white p-6 shadow-md">
-            <h2 className="mb-3 text-2xl font-semibold">
-              Top places to visit in {destination.title}
-            </h2>
-            <p className="leading-7 text-gray-700">
-              API Placeholder
+            <p className="max-w-5xl leading-8 text-gray-700 md:text-lg">
+              {destination.overview}
             </p>
           </div>
         </section>
 
         <div className="mt-8">
           <Link
-            href="/destinations"
-            className="inline-block rounded-lg border border-gray-300 bg-white px-4 py-2 font-medium text-gray-800 transition hover:bg-gray-900 hover:text-white"
+          href="/destinations"
+          className="inline-block rounded-lg border border-gray-300 bg-white px-4 py-2 font-medium text-gray-800 transition hover:bg-gray-900 hover:!text-white"
           >
             Back to Destinations
-          </Link>
-        </div>
+            </Link>
+            </div>
       </main>
     </div>
   );

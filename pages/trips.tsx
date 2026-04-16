@@ -131,20 +131,25 @@ export default function TripsPage() {
 
         <section id="planner" className={styles.plannerSection}>
           <div className={styles.plannerInner}>
-            <div className={styles.plannerIntro}>
-              <p>Trip planner</p>
-              <h2>Turn inspiration into an actual plan</h2>
-              <p>
-                Add destinations, organize ideas, and build a trip that feels
-                personal to you.
-              </p>
-            </div>
+            <div className={styles.plannerLayout}>
+              <div className={styles.plannerIntro}>
+                <span className={styles.plannerKicker}>Trip planner</span>
+                <h2>Turn inspiration into an actual plan</h2>
+                <p>
+                  Save destinations, organize ideas, and start building an itinerary
+                  that feels personal, flexible, and exciting from the very beginning.
+                </p>
+              </div>
 
-            <TripPlanner />
+              <div className={styles.plannerCard}>
+                <TripPlanner />
+              </div>
+            </div>
           </div>
         </section>
       </main>
 
+      <Footer />
     </>
   );
 }
