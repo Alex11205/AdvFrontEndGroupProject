@@ -27,6 +27,8 @@ const destinations: CardData[] = [
   { id: "poland", title: "Poland", continent: "EUROPE", image: "/images/poland.avif" },
   { id: "norway", title: "Norway", continent: "EUROPE", image: "/images/norway.avif" },
   { id: "austria", title: "Austria", continent: "EUROPE", image: "/images/austria.avif" },
+  { id: "cuba", title: "Cuba", continent: "Carribbean", image: "/images/cuba.avif" },
+  { id: "egypt", title: "Egypt", continent: "Africa", image: "/images/egypt.avif" },
 ];
 
 export default function Destinations() {

@@ -146,6 +146,22 @@ const destinations = [
       "No country waltzes so effortlessly between urban and outdoors as Austria. One day you're cresting alpine summits, the next you're swanning around imperial Vienna.",
     image: "/images/austria.avif",
   },
+  {
+    id: "cuba",
+    title: "Cuba",
+    continent: "Carribbean",
+    overview:
+      "From lush forests to a dynamic music scene, Cuba is a country of indefinable magic. Puff on Cuban cigars or cruise down the Havana streets in a classic car for a true taste of the good life.",
+    image: "/images/cuba.avif",
+  },
+  {
+    id: "egypt",
+    title: "Egypt",
+    continent: "Africa",
+    overview:
+      "Egypt welcomes you with its mighty Nile and magnificent monuments, the beguiling desert and lush delta, and with its long past and welcoming, story-loving people.",
+    image: "/images/egypt.avif",
+  },
 ];
 
 export default function DestinationPage() {
